@@ -1,0 +1,41 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  profiles:
+    active: dev
+  application:
+    name: spring-template
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/database_firewall?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    password: 123456
+jwt:
+  # 设置jwt签名加密时使用的秘钥
+  secret-key: secret-key
+  # 设置jwt过期时间
+  ttl: 72000
+  # 设置前端传递过来的令牌名称
+  token-name: Authorization
+
+# swagger 文档配置
+swagger:
+  title: "项目接口文档"
+  description: "项目接口文档"
+  base-package: com.ethan
+  enabled: true
+  version: 1.0.0
+
+# 日志文件配置路径
+logging:
+  config: classpath:log4j2-dev.xml
+  level:
+    org.springframework.cloud.gateway: trace
