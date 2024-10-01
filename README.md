@@ -1,1 +1,3 @@
-springboot单体项目模板
+# Springboot单体项目模版
+
+Springboot+Maven+Swagger+MySQL+Druid+Redis+Mybatis-Plus
